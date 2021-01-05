@@ -12,8 +12,8 @@ module.exports = class Reloader {
   }
 
   async init() {
-    log('Watching plugins at', path.join(this.omegga.pluginLoader.path, '*/omegga.*.js'));
-    this.watcher = chokidar.watch(path.join(this.omegga.pluginLoader.path, '*/omegga.*.js'));
+    log('Watching plugins at', path.join(this.omegga.pluginLoader.path, '**/*.js'));
+    this.watcher = chokidar.watch(path.join(this.omegga.pluginLoader.path, '**/*.js'));
     let wasLoaded = {};
 
     this.watcher.on('change', async file => {
